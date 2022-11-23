@@ -38,18 +38,18 @@ class _LoginComponet extends State<LoginComponent> {
                   offset: Offset(5, 5),
                   sigma: 2,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "LOGIN",
-                          style: mTitleStyle,
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 10),
+                //   child: Row(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           "LOGIN",
+                //           style: mTitleStyle,
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 SizedBox(
                   height: 20,
                 ),

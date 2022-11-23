@@ -39,18 +39,18 @@ class _RegisterComponet extends State<RegisterComponent> {
                   offset: Offset(5, 5),
                   sigma: 2,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "REGISTRASI",
-                          style: mTitleStyle,
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(left: 10),
+                //   child: Row(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           "REGISTRASI",
+                //           style: mTitleStyle,
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 SizedBox(
                   height: 20,
                 ),

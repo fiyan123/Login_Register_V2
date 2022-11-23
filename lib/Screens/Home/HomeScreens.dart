@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Components/Login/LoginComponent.dart';
+import 'package:flutter_app/Components/Home/HomeComponent.dart';
 import 'package:flutter_app/size_config.dart';
 import 'package:flutter_app/utils/constants.dart';
 
-class LoginScreen extends StatelessWidget {
+class HomeScreens extends StatelessWidget {
 
-  static String routeName = "/sign_in";
+  static String routeName = "/home";
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      body: LoginComponent(),
+      body: HomeComponent(),
     );
   }
 }

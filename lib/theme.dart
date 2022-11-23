@@ -39,12 +39,12 @@ TextTheme textTheme() {
  
 AppBarTheme appBarTheme() {
   return const AppBarTheme(
-    color: Colors.white,
+    // color: Color.fromARGB(255, 255, 255, 255),
     elevation: 0,
-    brightness: Brightness.light,
+    // brightness: Brightness.light,
     iconTheme: IconThemeData(color: Colors.black),
     textTheme: TextTheme(
-      headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),
+      headline6: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 18),
     ),
   );
 }

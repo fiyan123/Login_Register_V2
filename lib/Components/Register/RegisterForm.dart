@@ -40,8 +40,10 @@ class _SignUpForm extends State<SignUpform> {
 
           DefaultButtonCustomeColor(
             color: kColorBlue,
-            text: "DAFTAR",
-            press: () {},
+            text: "REGISTER",
+            press: () {
+              Navigator.pushNamed(context, LoginScreen.routeName);
+            },
           ),
           SizedBox(height: 20),
           GestureDetector(
@@ -50,7 +52,7 @@ class _SignUpForm extends State<SignUpform> {
               },
               child: Text(
               "Sudah Punya Akun ? Masuk Disini",
-              // style: TextStyle(decoration: TextDecoration.underline),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 20),

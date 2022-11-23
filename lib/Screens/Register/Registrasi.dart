@@ -10,9 +10,6 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
       body: RegisterComponent(),
     );
   }
