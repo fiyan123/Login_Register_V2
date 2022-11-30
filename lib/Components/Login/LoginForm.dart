@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Components/custom_surfix_icon.dart';
@@ -12,10 +13,8 @@ class SignInform extends StatefulWidget {
   _SignInForm createState() => _SignInForm();
 }
 
-
 // State
-class _SignInForm extends State<SignInform>{
-
+class _SignInForm extends State<SignInform> {
   final _formKey = GlobalKey<FormState>();
   String? username;
   String? password;
@@ -40,19 +39,20 @@ class _SignInForm extends State<SignInform>{
           // Lupa Password
           Row(
             children: [
-              Checkbox(value: remeber,
-              onChanged: (value) {
-                  setState(() {
-                    remeber = value;
-                  });
-                }
-              ),
-              Text("Lanjutkan Masuk", style: TextStyle(fontWeight: FontWeight.bold)),
+              Checkbox(
+                  value: remeber,
+                  onChanged: (value) {
+                    setState(() {
+                      remeber = value;
+                    });
+                  }),
+              Text("Continue login",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
               Spacer(),
               GestureDetector(
                 onTap: () {},
                 child: Text(
-                  "Lupa Password",
+                  "Forgot the password",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               )
@@ -71,8 +71,8 @@ class _SignInForm extends State<SignInform>{
               Navigator.pushNamed(context, RegisterScreen.routeName);
             },
             child: Text(
-            "Belum Punya Akun ? Daftar Disini",
-            style: TextStyle(fontWeight: FontWeight.bold),
+              "Not have account? Register this",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
             ),
           )
         ],
@@ -87,10 +87,10 @@ class _SignInForm extends State<SignInform>{
       style: mTitleStyle,
       decoration: InputDecoration(
         labelText: 'Email',
-        hintText: 'Masukkan Email Anda',
+        hintText: 'Enter Your Email',
         labelStyle: TextStyle(
-          color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
+            color: focusNode.hasFocus ? mSubtitleColor : kSecondaryColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       validator: ((value) => kEmailNullError),
     );
@@ -104,24 +104,24 @@ class _SignInForm extends State<SignInform>{
       style: mTitleStyle,
       decoration: InputDecoration(
         labelText: 'Password',
-        hintText: 'Masukkan Password Anda',
+        hintText: 'Enter Your Password',
         labelStyle: TextStyle(
-          color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: InkWell (
+            color: focusNode.hasFocus ? mSubtitleColor : kSecondaryColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: InkWell(
           onTap: () {
-              setState(() {
-                passToggle = !passToggle;
-              });
-            },
-            child: Icon(passToggle ? Icons.visibility : Icons.visibility_off_outlined),
+            setState(() {
+              passToggle = !passToggle;
+            });
+          },
+          child: Icon(
+              passToggle ? Icons.visibility : Icons.visibility_off_outlined),
         ),
       ),
-       validator: (value) {
+      validator: (value) {
         if (value!.isEmpty) {
           return "Enter Your Password";
-        }
-        else if(txtPassword.text.length < 6) {
+        } else if (txtPassword.text.length < 6) {
           return "Password Length Should be more than 6 characters";
         }
       },

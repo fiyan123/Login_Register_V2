@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widget/Category_widget.dart';
+import 'package:flutter_app/widget/Nilai_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard extends StatefulWidget {
@@ -19,7 +21,14 @@ class _DashboardState extends State<Dashboard> {
             children: [
               Stack (
                 children: [
-                  Container(height: 140, width: double.infinity, color: Colors.blue),
+                  Container(
+                    height: 160,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage("assets/images/educ.jpg"),fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                     Column (
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -34,8 +43,8 @@ class _DashboardState extends State<Dashboard> {
                                 children: [
                                   Container(
                                     alignment: Alignment.topLeft,
-                                    height: 45,
-                                    width: 45,
+                                    height: 50,
+                                    width: 50,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(image: NetworkImage("https://assets.jalantikus.com/assets/cache/467/350/userfiles/2020/05/07/31-Custom-57495.jpg")),
                                       borderRadius: BorderRadius.circular(25),
@@ -49,7 +58,7 @@ class _DashboardState extends State<Dashboard> {
                                   SizedBox(width: 10,),
       
                                   Text(
-                                    "Hi, Selamat Datang Di Pans Siswa",
+                                    "Hi, Welcome to Student Pans",
                                     style: GoogleFonts.montserrat(color: Colors.white),
                                   ),
                                 ],
@@ -74,10 +83,10 @@ class _DashboardState extends State<Dashboard> {
                             width: double.infinity,
                             decoration: BoxDecoration(color: Color(0xFFF5F5F7), borderRadius: BorderRadius.circular(30)),
                               child: TextField(cursorHeight: 20, 
-                            decoration: InputDecoration(hintText: "Cari Disini", prefixIcon: Icon(Icons.search_sharp),
+                            decoration: InputDecoration(hintText: "Search Here", prefixIcon: Icon(Icons.search_sharp),
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey, width: 2),
-                                borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide(color: Colors.grey, width: 3),
+                                borderRadius: BorderRadius.circular(10),
                               ),
                             )
                           ),
@@ -94,170 +103,58 @@ class _DashboardState extends State<Dashboard> {
                   child: Row(
                     children: [
                       Category(imagePath: "assets/images/online.png", title: "Education"),
-                      Category(imagePath: "assets/images/cap.png", title: "Graduated"),
+                      Category(imagePath: "assets/images/class.png", title: "Class"),
                       Category(imagePath: "assets/images/scholar.png", title: "Graduated"),
                       Category(imagePath: "assets/images/video.png", title: "Skill"),
                     ],
                   ),
                 ),
       
-              Padding(
-                padding: const EdgeInsets.all(15),
-                child: Text(
-                    "Daftar Data Kelas 🎓",
-                    style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Text(
+                      "Class Data List 🎓",
+                      style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
       
               Nilai(
                 imagePath: "assets/images/edub.jpg",
-                nameData: "Data Kelas A",
+                nameData: "Class Data A",
                 rating: "4.5",
-                kelas: "XI A",
+                kelas: "Class teacher name",
               ),
 
               SizedBox(height: 3),
 
               Nilai(
                 imagePath: "assets/images/educ.jpg",
-                nameData: "Data Kelas B",
+                nameData: "Class Data B",
                 rating: "4.6",
-                kelas: "XI B",
+                kelas: "Class teacher name",
               ),
 
               SizedBox(height: 3),
 
               Nilai(
                 imagePath: "assets/images/edua.jpg",
-                nameData: "Data Kelas C",
+                nameData: "Class Data C",
                 rating: "4.5",
-                kelas: "XI C",
+                kelas: "Class teacher name",
               ),
 
               SizedBox(height: 3),
 
               Nilai(
-                imagePath: "assets/images/edua.jpg",
-                nameData: "Data Kelas D",
+                imagePath: "assets/images/teacher2.jpg",
+                nameData: "Class Data D",
                 rating: "4.5",
-                kelas: "XI D",
+                kelas: "Class teacher name",
               ),
-
             ],
           ) 
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-
-
-class Nilai extends StatelessWidget {
-
-    final String imagePath;
-    final String nameData;
-    final String rating;
-    final String kelas;
-
-  const Nilai({
-    Key? key,
-    required this.imagePath,
-    required this.nameData,
-    required this.rating,
-    required this.kelas,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 240,
-      child: Stack(
-        children: [
-          Card(
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            elevation: 10,
-            child: Column(
-              children: [
-                SizedBox(width: double.infinity,
-                height: 150,
-                child: Image.asset(imagePath ,fit: BoxFit.cover),
-                )
-              ],
-            ),
-          ),
-
-          Positioned(
-            bottom: 0,
-            left: 10, 
-            child: SizedBox(
-                height: 70,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(nameData, style: GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.bold)),
-
-                      SizedBox(height: 10),
-
-                        Row(
-                          children: [
-                            Icon(Icons.star, color: Colors.amber),
-                            SizedBox(width: 5),
-                              Text(rating, style: GoogleFonts.montserrat(fontSize: 12)),
-                            SizedBox(width: 20),
-
-                            Icon(Icons.school, color: Colors.grey),
-                              SizedBox(width: 5),
-                            Text(kelas, style: GoogleFonts.montserrat(fontSize: 12)),
-                          ],
-                        ),
-                    ],
-                  ),
-                ),
-              ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-
-
-
-class Category extends StatelessWidget {
-
-  final String imagePath;
-  final String title;
-
-  const Category({
-    Key? key,
-    required this.imagePath,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Container(
-          width: 50,
-          height: 60,
-          child: Column(
-            children: [
-              Image.asset(imagePath, width: 26),
-              SizedBox(height: 10),
-              Text(title, style: GoogleFonts.montserrat(fontSize: 10)),
-            ],
-          )
         ),
       ),
     );

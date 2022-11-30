@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Screens/Login/LoginScreens.dart';
+import 'package:flutter_app/page/setting.dart';
 
 class Navbar extends StatelessWidget {
 
@@ -23,10 +25,9 @@ class Navbar extends StatelessWidget {
             ),
 
             decoration: BoxDecoration(
-              color: Colors.blue,
               image: DecorationImage(
                 image: AssetImage(
-                  "assets/images/bg.jpg",
+                  "assets/images/edub.jpg",
                 ),
                 fit: BoxFit.cover,
               ),
@@ -39,11 +40,6 @@ class Navbar extends StatelessWidget {
               onTap: () => null
           ),
 
-          ListTile(
-              leading: Icon(Icons.save),
-              title: Text("Saved"),
-              onTap: () => null
-          ),
 
           ListTile(
               leading: Icon(Icons.favorite),
@@ -51,14 +47,23 @@ class Navbar extends StatelessWidget {
               onTap: () => null
           ),
           ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("Setting"),
+              leading: Icon(Icons.save),
+              title: Text("Saved"),
               onTap: () => null
           ),
           ListTile(
-              leading: Icon(Icons.logout),
+              leading: Icon(Icons.settings),
+              title: Text("Setting"),
+              onTap: () => {
+                // Navigator.pushNamed(context, Setting.routeName);
+            },
+          ),
+          ListTile(
+              leading: Icon(Icons.exit_to_app_sharp),
               title: Text("Logout"),
-              onTap: () => null
+              onTap: () {
+              Navigator.pushNamed(context, LoginScreen.routeName);
+            },
           ),
         ],
       ),

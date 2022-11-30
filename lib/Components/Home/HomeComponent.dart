@@ -6,13 +6,12 @@ import 'package:flutter_app/page/profile.dart';
 import 'package:flutter_app/page/setting.dart';
 
 class HomeComponent extends StatefulWidget {
-
   @override
-  _HomeComponentState createState() => _HomeComponentState(); 
+  _HomeComponentState createState() => _HomeComponentState();
 }
 
 class _HomeComponentState extends State<HomeComponent> {
- int currentTab = 0;
+  int currentTab = 0;
   final List<Widget> screens = [
     Dashboard(),
     Chat(),
@@ -32,7 +31,7 @@ class _HomeComponentState extends State<HomeComponent> {
         bucket: bucket,
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.new_label),
         onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -43,16 +42,16 @@ class _HomeComponentState extends State<HomeComponent> {
           height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget> [
+            children: <Widget>[
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MaterialButton (
+                  MaterialButton(
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                       currentScreen = Dashboard();
-                       currentTab = 0; 
+                        currentScreen = Dashboard();
+                        currentTab = 0;
                       });
                     },
                     child: Column(
@@ -64,30 +63,33 @@ class _HomeComponentState extends State<HomeComponent> {
                         ),
                         Text(
                           'Dashboard',
-                          style: TextStyle(color : currentTab == 0 ? Colors.blue : Colors.grey),
+                          style: TextStyle(
+                              color:
+                                  currentTab == 0 ? Colors.blue : Colors.grey),
                         ),
                       ],
                     ),
                   ),
-
-                   MaterialButton(
+                  MaterialButton(
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                       currentScreen = Chat();
-                       currentTab = 1; 
+                        currentScreen = Chat();
+                        currentTab = 1;
                       });
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.chat,
+                          Icons.class_,
                           color: currentTab == 1 ? Colors.blue : Colors.grey,
                         ),
                         Text(
-                          'Chat',
-                          style: TextStyle(color : currentTab == 1 ? Colors.blue : Colors.grey),
+                          'Class',
+                          style: TextStyle(
+                              color:
+                                  currentTab == 1 ? Colors.blue : Colors.grey),
                         ),
                       ],
                     ),
@@ -100,12 +102,12 @@ class _HomeComponentState extends State<HomeComponent> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   MaterialButton(
+                  MaterialButton(
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                       currentScreen = Setting();
-                       currentTab = 3; 
+                        currentScreen = Setting();
+                        currentTab = 3;
                       });
                     },
                     child: Column(
@@ -117,30 +119,33 @@ class _HomeComponentState extends State<HomeComponent> {
                         ),
                         Text(
                           'Setting',
-                          style: TextStyle(color : currentTab == 3 ? Colors.blue : Colors.grey),
+                          style: TextStyle(
+                              color:
+                                  currentTab == 3 ? Colors.blue : Colors.grey),
                         ),
                       ],
                     ),
                   ),
-
-                   MaterialButton (
+                  MaterialButton(
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                       currentScreen = Profile();
-                       currentTab = 2; 
+                        currentScreen = Profile();
+                        currentTab = 2;
                       });
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.account_circle_outlined,
+                          Icons.account_circle,
                           color: currentTab == 2 ? Colors.blue : Colors.grey,
                         ),
                         Text(
                           'Me',
-                          style: TextStyle(color : currentTab == 2 ? Colors.blue : Colors.grey),
+                          style: TextStyle(
+                              color:
+                                  currentTab == 2 ? Colors.blue : Colors.grey),
                         ),
                       ],
                     ),

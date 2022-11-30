@@ -6,7 +6,7 @@ import 'package:flutter_app/theme.dart';
 void main() async {
   runApp(
     MaterialApp(
-      title: "Penilaian Siswa",
+      title: "Penilaian Akademik Siswa",
       debugShowCheckedModeBanner: false,
       theme: theme(),
       initialRoute: LoginScreen.routeName,

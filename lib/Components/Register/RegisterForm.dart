@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Components/custom_surfix_icon.dart';
 import 'package:flutter_app/Components/default_button_custome_color.dart';
@@ -14,15 +13,14 @@ class SignUpform extends StatefulWidget {
 
 // State
 class _SignUpForm extends State<SignUpform> {
-
   final _formKey = GlobalKey<FormState>();
   String? namalengkap;
   String? email;
   String? password;
- 
-  TextEditingController txtEmail= TextEditingController(),
-                        txtPassword = TextEditingController(),
-                        txtNamaLengkap = TextEditingController();
+
+  TextEditingController txtEmail = TextEditingController(),
+      txtPassword = TextEditingController(),
+      txtNamaLengkap = TextEditingController();
 
   FocusNode focusNode = new FocusNode();
 
@@ -37,7 +35,6 @@ class _SignUpForm extends State<SignUpform> {
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPassword(),
           SizedBox(height: getProportionateScreenHeight(30)),
-
           DefaultButtonCustomeColor(
             color: kColorBlue,
             text: "REGISTER",
@@ -47,12 +44,12 @@ class _SignUpForm extends State<SignUpform> {
           ),
           SizedBox(height: 20),
           GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, LoginScreen.routeName);
-              },
-              child: Text(
-              "Sudah Punya Akun ? Masuk Disini",
-              style: TextStyle(fontWeight: FontWeight.bold),
+            onTap: () {
+              Navigator.pushNamed(context, LoginScreen.routeName);
+            },
+            child: Text(
+              "Already Account ? Login this",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
             ),
           ),
           SizedBox(height: 20),
@@ -67,31 +64,31 @@ class _SignUpForm extends State<SignUpform> {
       keyboardType: TextInputType.text,
       style: mTitleStyle,
       decoration: InputDecoration(
-        labelText: 'Nama Lengkap',
-        hintText: 'Masukkan Nama Anda',
+        labelText: 'Name',
+        hintText: 'Enter Your Name',
         labelStyle: TextStyle(
-          color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSurffixIcon(
-            svgIcon: "assets/icons/User.svg",
+            color: focusNode.hasFocus ? mSubtitleColor : kSecondaryColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(
+          svgIcon: "assets/icons/User.svg",
         ),
       ),
     );
   }
 
-    TextFormField buildEmail() {
+  TextFormField buildEmail() {
     return TextFormField(
       controller: txtEmail,
       keyboardType: TextInputType.emailAddress,
       style: mTitleStyle,
       decoration: InputDecoration(
         labelText: 'Email',
-        hintText: 'Masukkan Email Anda',
+        hintText: 'Enter Your Email',
         labelStyle: TextStyle(
-          color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSurffixIcon(
-            svgIcon: "assets/icons/Mail.svg",
+            color: focusNode.hasFocus ? mSubtitleColor : kSecondaryColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(
+          svgIcon: "assets/icons/Mail.svg",
         ),
       ),
     );
@@ -105,12 +102,12 @@ class _SignUpForm extends State<SignUpform> {
       style: mTitleStyle,
       decoration: InputDecoration(
         labelText: 'Password',
-        hintText: 'Masukkan Password Anda',
+        hintText: 'Enter Your Password',
         labelStyle: TextStyle(
-          color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffixIcon: CustomSurffixIcon(
-            svgIcon: "assets/icons/Lock.svg",
+            color: focusNode.hasFocus ? mSubtitleColor : kSecondaryColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(
+          svgIcon: "assets/icons/Lock.svg",
         ),
       ),
     );
